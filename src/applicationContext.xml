@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userDao" class="cn.luqiwei.chapter1.dao.impl.UserDaoImpl"></bean>
+
+
+
+    <bean id="userService" class="cn.luqiwei.chapter1.service.impl.UserServiceImpl">
+        <!--1.构造方法参数注入-->
+        <!--<constructor-arg ref="userDao"></constructor-arg>-->
+
+        <!--2.setter方法注入-->
+        <property name="userDao" ref="userDao"></property>
+        <property name="gender" value="男"></property>
+    </bean>
+</beans>
